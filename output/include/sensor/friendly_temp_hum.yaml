@@ -1,0 +1,47 @@
+# AUTO GENERATED
+- platform: template
+  sensors:
+
+    kitchen_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.kitchen_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    kitchen_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.kitchen_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+    bedroom_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.bedroom_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    bedroom_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.bedroom_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+    child_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.child_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    child_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.child_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+    cabinet_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.cabinet_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    cabinet_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.cabinet_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+    bathroom_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.bathroom_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    bathroom_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.bathroom_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+    balcon_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.balcon_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    balcon_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.balcon_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+    garderob_temperature_humidity_friendly:
+      value_template: "{{ states.sensor.garderob_temperature_humidity.attributes.humidity | round(0) }}"
+      icon_template: mdi:water-percent
+    garderob_temperature_temperature_friendly:
+      value_template: "{{ states.sensor.garderob_temperature_temperature.attributes.temperature | round(1) }}"
+      icon_template: mdi:thermometer
+

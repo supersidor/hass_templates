@@ -1,0 +1,18 @@
+daily_aqua_filter:
+  source: sensor.aqua_filter_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_aqua_filter:
+  source: sensor.aqua_filter_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_aqua_filter:
+  source: sensor.aqua_filter_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night

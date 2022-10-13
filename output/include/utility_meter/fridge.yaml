@@ -1,0 +1,18 @@
+daily_fridge:
+  source: sensor.fridge_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_fridge:
+  source: sensor.fridge_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_fridge:
+  source: sensor.fridge_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night

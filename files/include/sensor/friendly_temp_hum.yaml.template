@@ -1,3 +1,4 @@
+# AUTO GENERATED
 - platform: template
   sensors:
 {% for sensor in sensors %}

@@ -1,0 +1,18 @@
+daily_boiler:
+  source: sensor.boiler_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_boiler:
+  source: sensor.boiler_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_boiler:
+  source: sensor.boiler_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night

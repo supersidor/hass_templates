@@ -1,0 +1,18 @@
+daily_nas:
+  source: sensor.nas_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_nas:
+  source: sensor.nas_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_nas:
+  source: sensor.nas_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night

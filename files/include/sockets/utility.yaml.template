@@ -1,0 +1,18 @@
+daily_{{name}}:
+  source: sensor.{{name}}_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_{{name}}:
+  source: sensor.{{name}}_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_{{name}}:
+  source: sensor.{{name}}_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night

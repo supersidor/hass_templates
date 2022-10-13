@@ -1,0 +1,18 @@
+daily_drymachine:
+  source: sensor.drymachine_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_drymachine:
+  source: sensor.drymachine_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_drymachine:
+  source: sensor.drymachine_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night
