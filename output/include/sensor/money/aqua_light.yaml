@@ -1,0 +1,11 @@
+#generated
+- platform: template
+  sensors:
+    money_daily_aqua_light:
+      unit_of_measurement: "hrn"
+      value_template: "{{ (states.sensor.daily_aqua_light_day.state | float * 1.68 + states.sensor.daily_aqua_light_night.state | float * 1.68)|round(2) }}"
+      icon_template: mdi:cash
+    money_monthly_aqua_light:
+      unit_of_measurement: "hrn"
+      value_template: "{{ (states.sensor.monthly_aqua_light_day.state | float * 1.68 + states.sensor.monthly_aqua_light_night.state | float * 1.68)|round(2) }}"
+      icon_template: mdi:cash

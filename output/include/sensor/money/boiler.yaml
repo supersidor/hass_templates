@@ -1,0 +1,11 @@
+#generated
+- platform: template
+  sensors:
+    money_daily_boiler:
+      unit_of_measurement: "hrn"
+      value_template: "{{ (states.sensor.daily_boiler_day.state | float * 1.68 + states.sensor.daily_boiler_night.state | float * 1.68)|round(2) }}"
+      icon_template: mdi:cash
+    money_monthly_boiler:
+      unit_of_measurement: "hrn"
+      value_template: "{{ (states.sensor.monthly_boiler_day.state | float * 1.68 + states.sensor.monthly_boiler_night.state | float * 1.68)|round(2) }}"
+      icon_template: mdi:cash

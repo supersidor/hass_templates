@@ -2,7 +2,8 @@ from jinja2 import Environment, FileSystemLoader
 from utils import saveToFile, save
 
 environment = Environment(loader=FileSystemLoader("files/"))
-template = environment.get_template("include/sockets/utility.yaml.template")
+templateUtility = environment.get_template("include/sockets/utility.yaml.template")
+templateMoney = environment.get_template("include/sockets/money.yaml.template")
 sockets = ["aqua_filter",
            "aqua_light",
            "boiler",
@@ -17,9 +18,12 @@ sockets = ["aqua_filter",
         ]
 
 for socket in sockets:
-    result = template.render(name=socket)
+    result = templateUtility.render(name=socket)
     print(result)
     save("include/utility_meter/"+socket+".yaml",result)
+    result = templateMoney.render(name=socket)
+    print(result)
+    save("include/sensor/money/"+socket+".yaml",result)
     #saveToFile(template,result)
 # template.name
 #

@@ -1,0 +1,11 @@
+#generated
+- platform: template
+  sensors:
+    money_daily_{{name}}:
+      unit_of_measurement: "hrn"
+      value_template: "{% raw %}{{{% endraw %} (states.sensor.daily_{{name}}_day.state | float * 1.68 + states.sensor.daily_{{name}}_night.state | float * 1.68)|round(2) {% raw %}}}{% endraw %}"
+      icon_template: mdi:cash
+    money_monthly_{{name}}:
+      unit_of_measurement: "hrn"
+      value_template: "{% raw %}{{{% endraw %} (states.sensor.monthly_{{name}}_day.state | float * 1.68 + states.sensor.monthly_{{name}}_night.state | float * 1.68)|round(2) {% raw %}}}{% endraw %}"
+      icon_template: mdi:cash
