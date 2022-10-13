@@ -1,0 +1,11 @@
+- platform: template
+  sensors:
+{% for sensor in sensors %}
+    {{sensor}}_temperature_humidity_friendly:
+      value_template: "{% raw %}{{{% endraw %} states.sensor.{{sensor}}_temperature_humidity.attributes.humidity | round(0) {% raw %}}}{% endraw %}"
+      icon_template: mdi:water-percent
+    {{sensor}}_temperature_temperature_friendly:
+      value_template: "{% raw %}{{{% endraw %} states.sensor.{{sensor}}_temperature_temperature.attributes.temperature | round(1) {% raw %}}}{% endraw %}"
+      icon_template: mdi:thermometer{% endfor %}
+
+
