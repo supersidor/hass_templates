@@ -1,0 +1,11 @@
+#generated
+- platform: template
+  sensors:
+    money_daily_dishmachine:
+      unit_of_measurement: "hrn"
+      value_template: "{{ (states.sensor.daily_dishmachine_day.state | float * 1.68 + states.sensor.daily_dishmachine_night.state | float * 1.68)|round(2) }}"
+      icon_template: mdi:cash
+    money_monthly_dishmachine:
+      unit_of_measurement: "hrn"
+      value_template: "{{ (states.sensor.monthly_dishmachine_day.state | float * 1.68 + states.sensor.monthly_dishmachine_night.state | float * 1.68)|round(2) }}"
+      icon_template: mdi:cash

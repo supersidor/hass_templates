@@ -1,0 +1,18 @@
+daily_dishmachine:
+  source: sensor.dishmachine_socket_energy
+  cycle: daily
+  tariffs:
+    - day
+    - night
+monthly_dishmachine:
+  source: sensor.dishmachine_socket_energy
+  cycle: monthly
+  tariffs:
+    - day
+    - night
+yearly_dishmachine:
+  source: sensor.dishmachine_socket_energy
+  cycle: yearly
+  tariffs:
+    - day
+    - night
