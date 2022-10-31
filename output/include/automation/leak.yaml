@@ -1,0 +1,243 @@
+
+- id: shower_water_leak_detected
+  alias: shower_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shower_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by shower_water
+- id:  shower_water_leak_removed
+  alias:  shower_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shower_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by shower_water
+
+- id: shower_water2_leak_detected
+  alias: shower_water2_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shower_water2_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by shower_water2
+- id:  shower_water2_leak_removed
+  alias:  shower_water2_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shower_water2_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by shower_water2
+
+- id: kitchen_water_leak_detected
+  alias: kitchen_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by kitchen_water
+- id:  kitchen_water_leak_removed
+  alias:  kitchen_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by kitchen_water
+
+- id: dishmachine_water_leak_detected
+  alias: dishmachine_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.dishmachine_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by dishmachine_water
+- id:  dishmachine_water_leak_removed
+  alias:  dishmachine_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.dishmachine_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by dishmachine_water
+
+- id: filter_water_leak_detected
+  alias: filter_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.filter_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by filter_water
+- id:  filter_water_leak_removed
+  alias:  filter_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.filter_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by filter_water
+
+- id: aqua_water_leak_detected
+  alias: aqua_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.aqua_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by aqua_water
+- id:  aqua_water_leak_removed
+  alias:  aqua_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.aqua_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by aqua_water
+
+- id: bath_water_leak_detected
+  alias: bath_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bath_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by bath_water
+- id:  bath_water_leak_removed
+  alias:  bath_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bath_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by bath_water
+
+- id: bath_water2_leak_detected
+  alias: bath_water2_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bath_water2_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by bath_water2
+- id:  bath_water2_leak_removed
+  alias:  bath_water2_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bath_water2_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by bath_water2
+
+- id: underbath_water_leak_detected
+  alias: underbath_water_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.underbath_water_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by underbath_water
+- id:  underbath_water_leak_removed
+  alias:  underbath_water_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.underbath_water_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by underbath_water

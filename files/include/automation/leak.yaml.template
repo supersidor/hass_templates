@@ -1,0 +1,28 @@
+{% for sensor in sensors %}
+- id: {{sensor}}_leak_detected
+  alias: {{sensor}}_leak_detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.{{sensor}}_water_leak
+      to: "on"
+  action:
+    service: notify.me
+    data:
+      message: WATER detected by {{sensor}}
+- id:  {{sensor}}_leak_removed
+  alias:  {{sensor}}_leak_removed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.{{sensor}}_water_leak
+      from: "on"
+      to: "off"
+      for: "00:05:00"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.ha_uptime
+    above: 6
+  action:
+    service: notify.me
+    data:
+      message: no water detected by {{sensor}}
+{% endfor %}
