@@ -25,8 +25,3 @@ for socket in sockets:
     result = templateMoney.render(name=socket)
     print(result)
     save("include/sensor/money/"+socket+".yaml",result)
-    #saveToFile(template,result)
-# template.name
-#
-# with open("output", "w") as fh:
-#     fh.write(result)

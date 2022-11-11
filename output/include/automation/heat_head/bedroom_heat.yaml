@@ -1,0 +1,20 @@
+- id: bedroom_heat_calibration
+  alias: bedroom_heat_calibration
+  initial_state: true
+### Каждые полчаса
+  trigger:
+    - platform: time_pattern
+      minutes: "/30"
+  action:
+### В топик термостата, путь к нему нужно указать свой, пишется настройка калибровка - 0.0, она нужна только для обновления данных с датчика температуры головы
+    - service: mqtt.publish
+      data_template:
+          topic: zigbee2mqtt/bedroom_heat/set/local_temperature_calibration
+          payload_template: "0.0"
+### Задержка в 10 секунд для получения данных
+    - delay: 00:00:10
+### В топик термостата пишется разница значений между показаниями внешнего датчика, который стоит в комнате и датчиков головы. Калибруя его в соответствии с ним.
+    - service: mqtt.publish
+      data_template:
+          topic: zigbee2mqtt/bedroom_heat/set/local_temperature_calibration
+          payload_template: "{{((states('sensor.bedroom_temperature_temperature') | float - state_attr('climate.bedroom_heat', 'local_temperature') | float))|round(1) }}"
